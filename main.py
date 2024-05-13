@@ -42,7 +42,7 @@ def getWeather():
         hea = {'User-Agent': 'Mozilla/5.0'}
         r = requests.get(url=url, headers=hea)
         print(r)
-        if r.status == "1":
+        if r.status_code == 200:
             result = r.lives
             res = json.loads(result)
             if "多云" in res['data'][0]['weather']:
