@@ -38,7 +38,7 @@ def getWeather():
         return
     else:
         global K, type
-        url = 'https://restapi.amap.com/v3/weather/weatherInfo?key=' gdkey + '&city=' + area
+        url = 'https://restapi.amap.com/v3/weather/weatherInfo?key=' + gdkey + '&city=' + area
         hea = {'User-Agent': 'Mozilla/5.0'}
         r = requests.get(url=url, headers=hea)
         if r.status == "1":
