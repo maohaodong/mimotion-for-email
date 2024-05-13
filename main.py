@@ -16,6 +16,7 @@ sckey = sys.argv[5]
 open_get_weather = sys.argv[3]
 # 设置获取天气的地区（上面开启后必填）如：area = "宁波"
 area = sys.argv[4]
+gdkey = sys.argv[6]
 
 set_push = [True]
 
@@ -37,11 +38,11 @@ def getWeather():
         return
     else:
         global K, type
-        url = 'https://api.kit9.cn/api/seven_days_weather/api.php?city=' + area
+        url = 'https://restapi.amap.com/v3/weather/weatherInfo?key=' gdkey + '&city=' + area
         hea = {'User-Agent': 'Mozilla/5.0'}
         r = requests.get(url=url, headers=hea)
-        if r.status_code == 200:
-            result = r.text
+        if r.status == "1":
+            result = r.lives
             res = json.loads(result)
             if "多云" in res['data'][0]['weather']:
                 K = K_dict["多云"]
