@@ -36,6 +36,6 @@ jobs:
           area='${{ secrets.AREA }}'
           sckey='${{ secrets.SCKEY }}'
           gdkey='${{ secrets.GDKEY }}'
-          python3 main.py ${user} ${passwd} ${open_get_weather} ${area} ${sckey}
+          python3 main.py ${user} ${passwd} ${open_get_weather} ${area} ${sckey} ${gdkey}
           time=$(TZ=UTC-8 date +'%Y-%m-%d %H:%M:%S')
           echo "最后一次运行时间: $time（北京时间）"
