@@ -45,7 +45,6 @@ def getWeather():
         if r.status_code == 200:
             result = r.text
             res = json.loads(result)
-            pring
             if "多云" in res['lives'][0]['weather']:
                 K = K_dict["多云"]
             elif "阴" in res['lives'][0]['weather']:
